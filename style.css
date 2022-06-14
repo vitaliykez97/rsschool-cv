@@ -4,6 +4,10 @@
   padding: 0;  
 }
 
+html {
+  scroll-behavior: smooth; 
+}
+
 body{
   display: flex;
   flex-direction: column;
@@ -111,6 +115,11 @@ header{
   background-color: #573132;
   height: 1px;
   border-radius: 0.5px;
+  opacity: 1;
+}
+
+.section:nth-last-child(-n+2)::after{
+  opacity: 0;
 }
 
 .section-profile{
@@ -212,6 +221,79 @@ header{
   text-shadow: 0 0 15px #689CD2;
 }
 
+.section-list{
+  color: #0D58A6;
+  padding-left: 20px;
+  list-style-type: disclosure-closed;  
+}
+
+.section-list li span{
+  color: #573132;
+}
+
+
+/* ---FOOTER--- */
+
+footer{
+  background: #0D58A6;
+  color: #689CD2;
+}
+
+.footer-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.github-link{
+  position: relative;
+  text-decoration: none;
+  color:#689CD2;
+}
+
+.github-link::after{
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.github-link:hover{
+  color: #fff;
+  text-shadow: 0 0 12px #fff;
+}
+
+.github-link:hover::after {
+  opacity: 1;
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  box-shadow: 0 0 12px #fff;
+}
+
+@keyframes slidein {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(100% - 0px);
+  }
+}
+
+.rss{
+  display: flex;
+  align-items: center;
+}
+
+.rss img{
+  height: 42px;
+  width: auto;
+}
 
 
 
