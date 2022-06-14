@@ -1,5 +1,304 @@
 *{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;  
+}
+
+html {
+  scroll-behavior: smooth; 
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 320px;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-};
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  background: #ddd;
+  color: #573132;
+  font-weight: 300;
+}
+
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 50px;
+}
+
+/* ---HEADER--- */
+
+header{
+  background-color: #0D58A6;
+
+}
+
+.nav ul{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+}
+
+.nav ul li a{
+  position: relative;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 300;
+  color: #689CD2;
+  text-transform: uppercase;
+  margin: 0 12px;
+  line-height: 50px;
+  transition: 0.2s;
+}
+
+.nav ul li a::after{
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.nav ul li a:hover{
+  color: #fff;
+  text-shadow: 0 0 12px #fff;
+}
+
+.nav ul li a:hover::after {
+  opacity: 1;
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  box-shadow: 0 0 12px #fff;
+}
+
+@keyframes slidein {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(100% - 0px);
+  }
+}
+
+/* ---MAIN--- */
+
+.main-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.section{
+  position: relative;
+  width: calc(50% - 20px);
+  padding: 10px;
+  padding-bottom: 30px;
+}
+
+.section::after{
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 40px);
+  left: 20px;
+  background-color: #573132;
+  height: 1px;
+  border-radius: 0.5px;
+  opacity: 1;
+}
+
+.section:nth-last-child(-n+2)::after{
+  opacity: 0;
+}
+
+.section-profile{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 100%; 
+  padding: 50px 30px;
+  border-bottom: none;
+}
+
+.section-profile::after{
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 30px);
+  left: 15px;
+  background-color: #689CD2;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.section-profile img{
+  height: auto;
+  width: 220px;
+  border: 2px solid #0D58A6;
+  box-shadow: 0 0 15px #689CD2; 
+  background: #fff; 
+  border-radius: 50%;
+}
+
+.section-profile-title{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section-profile-title h1{
+  position: relative;
+  font-weight: 300;
+  font-size: 48px;  
+  padding: 10px;
+}
+
+.section-profile-title h1::after{
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 70px);
+  left: 35px;
+  background-color: #0D58A6;
+  height: 2px;
+}
+
+.section-profile-title h3{  
+  font-weight: 300;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.section-title{
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 20px;
+  color: #0D58A6;
+  letter-spacing: 2px;
+  padding: 20px 0;
+}
+
+/* ---CONTACTS--- */
+
+.contacts-list{
+  list-style: none;
+}
+
+.contacts-list li{
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.contacts-logo{
+  color:#0D58A6;
+  font-size: 1.2em;
+  padding-right: 10px;
+}
+
+.contacts-link{
+  text-decoration: none;
+  color: #689CD2;
+  transition: 0.2s;
+}
+
+.contacts-link:hover{
+  color:#0D58A6;
+  text-shadow: 0 0 15px #689CD2;
+}
+
+.section-list{
+  color: #0D58A6;
+  padding-left: 20px;
+  list-style-type: disclosure-closed;  
+}
+
+.section-list li span{
+  color: #573132;
+}
+
+
+/* ---FOOTER--- */
+
+footer{
+  background: #0D58A6;
+  color: #689CD2;
+}
+
+.footer-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.github-link{
+  position: relative;
+  text-decoration: none;
+  color:#689CD2;
+}
+
+.github-link::after{
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.github-link:hover{
+  color: #fff;
+  text-shadow: 0 0 12px #fff;
+}
+
+.github-link:hover::after {
+  opacity: 1;
+  animation-name: slidein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  box-shadow: 0 0 12px #fff;
+}
+
+@keyframes slidein {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(100% - 0px);
+  }
+}
+
+.rss{
+  display: flex;
+  align-items: center;
+}
+
+.rss img{
+  height: 42px;
+  width: auto;
+}
+
+
+
+@media (max-width: 1440px){
+  .container{
+    margin: 0 20px;
+  }
+}
